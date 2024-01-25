@@ -12,3 +12,5 @@ class circle extends shape {
     
   }
 }
+
+module.exports = circle;

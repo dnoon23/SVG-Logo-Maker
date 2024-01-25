@@ -11,3 +11,5 @@ class triangle extends shape {
     </svg>`  
   }
 }
+
+module.exports = triangle;
