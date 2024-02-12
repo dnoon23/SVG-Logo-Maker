@@ -3,8 +3,8 @@ const fs = require('fs');
 const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
-const Shape = require('./lib/shape');
-const { error } = require('console');
+// const Shape = require('./lib/shape');
+// const { error } = require('console');
 
 
 // function generateSVG(answers) {
@@ -35,7 +35,7 @@ inquirer
   {
     type: 'input',    
     name: 'colorLetters',
-    message: 'Type the color you would like the letters to be.',
+    message: 'Type the name of the color, or it\'s hexadecimal, you would like the letters to be.',
   },
   {
     type: 'list',
@@ -46,7 +46,7 @@ inquirer
   {
     type: 'input',
     name: 'colorShape',
-    message: 'Type the name of the color you would like the shape to be.',
+    message: 'Type the name of the color, or it\'s hexadecimal, you would like the shape to be.',
   }
 ])
 
@@ -58,20 +58,20 @@ inquirer
   if (answers.shape == 'Circle'){
     const logo = new Circle(shapeColor, text, textColor);
     var renderLogo = logo.render();
-    fs.writeFile('./Example/Logo.svg', (renderLogo), (err) =>
-    err ? console.log(err) : console.log('Successfully created Logo.svg!')
+    fs.writeFile('./Example/logo.svg', (renderLogo), (err) =>
+    err ? console.log(err) : console.log('Generated logo.svg!')
     )  }
   if (answers.shape == 'Square'){
     const logo = new Square(shapeColor, text, textColor);
     var renderLogo = logo.render();
-    fs.writeFile('./Example/Logo.svg', (renderLogo), (err) =>
-    err ? console.log(err) : console.log('Successfully created Logo.svg!')
+    fs.writeFile('./Example/logo.svg', (renderLogo), (err) =>
+    err ? console.log(err) : console.log('Generated logo.svg!')
     )  }
   if (answers.shape == 'Triangle'){
     const logo = new Triangle(shapeColor, text, textColor);
     var renderLogo = logo.render();
-    fs.writeFile('./Example/Logo.svg', (renderLogo), (err) =>
-    err ? console.log(err) : console.log('Successfully created Logo.svg!')
+    fs.writeFile('./Example/logo.svg', (renderLogo), (err) =>
+    err ? console.log(err) : console.log('Generated logo.svg!')
     )  }
 });
 };
