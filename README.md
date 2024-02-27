@@ -15,7 +15,7 @@ To run the program you first need node installed.  Then open the folder in a ter
 
 After all the proper files are installed on your computer, open the folder in a terminal.  Then type 'node index.js' to run the program.  A series of questions will be displayed in the terminal.  First what letters should be displayed on the logo, between 1 and 3 characters long.  If the user trys to enter more or less then that they will be prompted to change their input.  Next you will be asked what color you would like the letters to be, type either the name of the color or it's hexadecimal.  Then you will have to choose what shape you would like for your logo between a circle, a square, or a triangle.  Last you will be asked what color you would like the shape to be, once again answer by inputing either the color name or it's hexadecimal.  A new file named 'logo.svg' will be created.  The finished file will be written in the Example folder.  If the program is rerun the file in the folder will be over written.
 
-Video demonstration: https://youtu.be/Z_rtUUHlywE
+Video demonstration: https://youtu.be/vNWVML0cqT8
 
 ## Credits
 
