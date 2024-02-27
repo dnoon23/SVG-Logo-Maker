@@ -1,3 +1,4 @@
+//Test to check if square is being made correctly
 const Square = require('../lib/square');
 
 describe('Square', () => {

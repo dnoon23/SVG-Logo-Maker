@@ -1,3 +1,4 @@
+//Test to check if circle is being made correctly
 const Circle = require('../lib/circle');
 
 describe('Circle', () => {

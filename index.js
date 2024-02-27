@@ -1,19 +1,13 @@
+//Sets up file to use inquirer and fs
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+//Connects the file to the different shape js
 const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
-// const Shape = require('./lib/shape');
-// const { error } = require('console');
 
-
-// function generateSVG(answers) {
-
-//   fs.writeFile('./Example/Logo.svg', answers, (err) =>
-//   err ? console.log(err) : console.log('Successfully created Logo.svg!')
-//   )
-// };
-
+//Questions asked to user
 function questions() {
 inquirer
  .prompt([
@@ -22,10 +16,10 @@ inquirer
     name: 'letters',
     message: 'Enter between 1 and 3 letters for your logo.',
 
+    //Stops the promps if the user answers with less than 1 letter or more than 3 and allows them to change their answer
     validate: (answer) => {
       if (answer.length < 1 || answer.length > 3){
         throw Error('Logo needs to be between 1 and 3 characters long, please try again.');
-        // return questions();
       }
       else{
         return true;
@@ -50,23 +44,29 @@ inquirer
   }
 ])
 
+//Checks which shape was selected and passes the answers to the corresponding shape js and writes the svg to create the logo
 .then((answers) => {
   const shapeColor = answers.colorShape;
   const text = answers.letters;
   const textColor = answers.colorLetters;
 
+  //Writes logo if circle is selected
   if (answers.shape == 'Circle'){
     const logo = new Circle(shapeColor, text, textColor);
     var renderLogo = logo.render();
     fs.writeFile('./Example/logo.svg', (renderLogo), (err) =>
     err ? console.log(err) : console.log('Generated logo.svg!')
     )  }
+
+  //Writes logo if square is selected
   if (answers.shape == 'Square'){
     const logo = new Square(shapeColor, text, textColor);
     var renderLogo = logo.render();
     fs.writeFile('./Example/logo.svg', (renderLogo), (err) =>
     err ? console.log(err) : console.log('Generated logo.svg!')
     )  }
+
+  //Writes logo if triangle is selected
   if (answers.shape == 'Triangle'){
     const logo = new Triangle(shapeColor, text, textColor);
     var renderLogo = logo.render();

@@ -1,3 +1,4 @@
+//Test to check if triangle is being made correctly
 const Triangle = require('../lib/triangle');
 
 describe('Traingle', () => {
